@@ -14,11 +14,15 @@ export const Route = createFileRoute("/contact")({
 });
 
 // Placeholder contact details — replace with real ones.
-const EMAIL = "hello@example.com";
+const EMAIL = "bar.linder@gmail.com";
 const channels = [
   { label: "EMAIL", value: EMAIL, href: `mailto:${EMAIL}` },
   { label: "GITHUB", value: "github.com/rednil-rab", href: "https://github.com/rednil-rab" },
-  { label: "LINKEDIN", value: "linkedin.com/in/barlinder", href: "https://linkedin.com/in/barlinder" },
+  {
+    label: "LINKEDIN",
+    value: "linkedin.com/in/barlinder",
+    href: "https://linkedin.com/in/barlinder",
+  },
 ];
 
 function Contact() {
@@ -31,13 +35,20 @@ function Contact() {
           {channels.map((c) => (
             <li key={c.label} className="flex flex-wrap gap-4">
               <span className="w-28 font-pixel text-[0.6rem] text-primary">{c.label}</span>
-              <a href={c.href} target="_blank" rel="noreferrer" className="text-accent underline hover:text-neon-yellow">
+              <a
+                href={c.href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-accent underline hover:text-neon-yellow"
+              >
                 {c.value}
               </a>
             </li>
           ))}
         </ul>
-        <a href={`mailto:${EMAIL}`} className="pixel-btn mt-8 inline-block">SEND MESSAGE</a>
+        <a href={`mailto:${EMAIL}`} className="pixel-btn mt-8 inline-block">
+          SEND MESSAGE
+        </a>
       </div>
     </section>
   );
