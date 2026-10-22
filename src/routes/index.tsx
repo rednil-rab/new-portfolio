@@ -1,24 +1,30 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Bar Linder — Frontend Developer" },
+      { name: "description", content: "Bar Linder, frontend developer specializing in React & TypeScript." },
+      { property: "og:title", content: "Bar Linder — Frontend Developer" },
+      { property: "og:description", content: "Frontend developer specializing in React & TypeScript." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <section className="mx-auto flex min-h-[75vh] max-w-5xl flex-col items-center justify-center px-4 text-center">
+      <p className="mb-6 font-pixel text-[0.65rem] text-neon-green">PLAYER 1 READY</p>
+      <h1 className="glow-text text-3xl text-foreground md:text-5xl">BAR LINDER</h1>
+      <p className="mt-8 text-2xl text-accent md:text-3xl">
+        Frontend Developer | React &amp; TypeScript<span className="blink">_</span>
+      </p>
+      <div className="mt-12 flex flex-wrap justify-center gap-6">
+        <Link to="/resume" className="pixel-btn">VIEW RESUME</Link>
+        <Link to="/contact" className="pixel-btn">CONTACT ME</Link>
+      </div>
+      <p className="blink mt-16 font-pixel text-[0.6rem] text-neon-yellow">INSERT COIN TO CONTINUE</p>
+    </section>
   );
 }
