@@ -23,17 +23,29 @@ type Project = {
   title: string;
   blurb: string;
   tags: string[];
-  demo: string;
+  demo: string | null;
   repo: string;
   /** Image URL, or an imported asset. null shows the "NO SIGNAL" placeholder. */
   screenshot: string | null;
+  status: string;
 };
 
 // ============ PLACEHOLDER PROJECTS — replace with your real ones ============
 // To show a real screenshot, put the file in src/assets and import it:
 //   import shot1 from "@/assets/project-1.jpg";
 // then use  screenshot: shot1,  below.
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    title: "Questkeeper",
+    blurb:
+      "Questkeeper is a browser-based campaign manager for tabletop role-playing games. Keep campaign notes, quests, and NPCs together in one place",
+    tags: ["React", "TypeScript"],
+    demo: null,
+    repo: "https://github.com/rednil-rab/campaign-manager",
+    screenshot: null,
+    status: "In Progress",
+  },
+];
 
 function Projects() {
   return (
@@ -63,9 +75,12 @@ function Projects() {
               ))}
             </ul>
             <div className="mt-6 flex flex-wrap gap-4">
-              <a href={p.demo} target="_blank" rel="noreferrer" className="pixel-btn">
-                LIVE DEMO
-              </a>
+              {p.demo && (
+                <a href={p.demo} target="_blank" rel="noreferrer" className="pixel-btn">
+                  LIVE DEMO
+                </a>
+              )}
+              <span className="self-center text-sm text-accent">{p.status}</span>
               <a href={p.repo} target="_blank" rel="noreferrer" className="pixel-btn">
                 GITHUB
               </a>
