@@ -24,7 +24,12 @@ export function SiteNav() {
                 className="text-foreground hover:text-accent"
                 activeProps={{ className: "text-primary" }}
               >
-                {({ isActive }) => <>{isActive ? "▶ " : ""}{l.label}</>}
+                {({ isActive }) => (
+                  <>
+                    {isActive ? "> " : ""}
+                    {l.label}
+                  </>
+                )}
               </Link>
             </li>
           ))}
