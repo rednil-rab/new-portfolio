@@ -66,6 +66,7 @@ function Projects() {
               )}
             </div>
             <h2 className="text-[0.7rem] text-neon-yellow">{p.title}</h2>
+            <p className="mt-2 text-sm text-accent">{p.status}</p>
             <p className="mt-3">{p.blurb}</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {p.tags.map((t) => (
@@ -80,7 +81,6 @@ function Projects() {
                   LIVE DEMO
                 </a>
               )}
-              <span className="self-center text-sm text-accent">{p.status}</span>
               <a href={p.repo} target="_blank" rel="noreferrer" className="pixel-btn">
                 GITHUB
               </a>
