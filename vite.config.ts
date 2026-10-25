@@ -6,7 +6,7 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-const base = process.env.GITHUB_ACTIONS === "true" ? "/new-portfolio/" : "/";
+const base = process.env["GITHUB_ACTIONS"] === "true" ? "/new-portfolio/" : "/";
 
 export default defineConfig({
   vite: { base },
@@ -20,6 +20,7 @@ export default defineConfig({
       { path: "/about", prerender: { enabled: true } },
       { path: "/contact", prerender: { enabled: true } },
       { path: "/resume", prerender: { enabled: true } },
+      { path: "/projects", prerender: { enabled: true } },
     ],
   },
 });
