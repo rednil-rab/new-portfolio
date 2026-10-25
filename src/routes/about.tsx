@@ -47,7 +47,7 @@ function About() {
           <ul className="space-y-4">
             {skills.map(({ group, items, color }) => (
               <li key={group}>
-                <div className={`text-sm ${color}`}>> {group}</div>
+                <div className={`text-sm ${color}`}>{">"} {group}</div>
                 <ul className="mt-1 space-y-1 pl-4 text-muted-foreground">
                   {items.map((item) => (
                     <li key={item}>{item}</li>
