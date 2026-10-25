@@ -40,7 +40,7 @@ function About() {
               {paragraph}
             </p>
           ))}
-          <p className="text-neon-cyan">> Always learning. Always building.</p>
+          <p className="text-neon-cyan">{">"} Always learning. Always building.</p>
         </div>
         <div className="pixel-box p-6">
           <h2 className="mb-4 text-xs text-primary">SKILLS</h2>
