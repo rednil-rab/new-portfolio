@@ -40,7 +40,7 @@ const projects: Project[] = [
     blurb:
       "Questkeeper is a browser-based campaign manager for tabletop role-playing games. Keep campaign notes, quests, and NPCs together in one place",
     tags: ["React", "TypeScript"],
-    demo: "https://rednil-rab.github.io/campaign-manager/",
+    demo: "https://questkeeper-drsg.onrender.com/",
     repo: "https://github.com/rednil-rab/campaign-manager",
     screenshot: null,
     status: "In Progress",
